@@ -1,0 +1,75 @@
+
+.NavHead {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 0 20px;
+  height: 75px; 
+  position: sticky;
+  top: 0;
+    z-index: 1000;
+    width: 100%;
+
+}
+
+.logo h1 {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo img {
+ height: 120px;
+    width: 160px;
+  /* object-fit: contain; */
+}
+
+.buttonHead {
+     display: flex
+;
+    align-items: center;
+    gap: 10px;
+    margin: 0px 0px 19px 0px;
+}
+
+.login-nav,
+.register-nav {
+     /* border-radius: 50px;
+    font-family: 'AvertaPE-Bold'; 
+     font-size: 12px;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 2px 5px;
+    margin-left: -30px;
+    margin-right: 15px;
+    margin-top: -2px;
+    display: flex
+;
+       background: linear-gradient(220deg, #c36 34%, #0741FF 80%);  */
+
+ background-color: black ; 
+background-color: none;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 4px 10px;  
+  border: none;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  padding: 8px 12px;
+}
+
+.buttonHead button:hover {
+  transform: translateY(-2px);
+  color: #ffffff ;
+}
+
+.buttonHead button:focus {
+  outline: none;
+  background-color: #0741FF ;
+  box-shadow: none;
+} 

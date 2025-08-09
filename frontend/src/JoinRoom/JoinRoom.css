@@ -1,0 +1,166 @@
+/* header{
+    display: flex;
+   padding: 0px 0px 0px 0px;
+}
+.joinCon {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joinForm {
+  background-color: white;
+  border: 1px solid #000;
+  border-radius: 50px;
+  padding: 30px 40px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+}
+
+.joinForm label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.joinForm input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid #aaa;
+  font-size: 15px;
+  outline: none;
+}
+
+.joinForm button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #60B5FF;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.joinForm button:hover {
+  background-color: #357abd;
+  transform: scale(1.03);
+}
+
+.joinForm button:active {
+  transform: scale(0.98);
+} */
+/* Background container */
+/* ===== Page background ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.header {
+  background-color: #0741FF;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+  height: 40px;
+}
+
+.header h1 {
+  font-size: 26px;
+  margin: 0;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/* Main container */
+.joinCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 60px 20px;
+  height: 100vh;
+}
+
+/* Form box */
+.joinForm {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+}
+
+.joinForm label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+  color: #0741FF;
+}
+
+.joinForm input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.joinForm input:focus {
+  border-color: #0741FF;
+  box-shadow: 0 0 0 2px rgba(7, 65, 255, 0.1);
+}
+
+.joinForm button {
+  background-color: #0741FF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.joinForm button:hover {
+  background-color: #36006e;
+}
+
+.joinForm button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+  background-color: #f7f7f7;
+}
+

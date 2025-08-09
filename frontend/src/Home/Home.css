@@ -1,0 +1,196 @@
+/* .homePage header{
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo-section {
+   display: flex;
+   align-items: center;
+
+}
+.logo-section img {
+ height: 75px;
+ width: 75px;
+}
+.nav-links {
+    padding: 0px 27px 0px 25px;
+    border: 0px solid black;
+    border-radius: 74px;
+    height: 42px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 21px 0px 26px;
+    width: 151px;
+        background-color: rgb(246, 246, 247);
+      
+      }
+      .nav-links a {
+  text-decoration: none;
+  color: inherit; 
+  outline: none;
+}
+.roomCon {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roomCon > div {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px 20px;
+  background-color: #fafafa;
+  display: flex;
+ 
+  gap: 12px;
+  align-items: center;
+}
+
+.roomCon h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+
+.roomCon p {
+  margin: 0;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.roomCon button {
+  align-self: flex-end;
+    padding: 8px 14px;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 138px;
+    margin: 0px;
+}
+
+.roomCon button:hover {
+  background-color: #357abd;
+} */
+
+/* Home.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.homePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #0741FF; /* Indigo shade */
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo-section h1 {
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.nav-links a {
+  text-decoration: none;
+  background-color: white;
+  color: #0741FF;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 500;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #dcd6f7;
+  color: #4b0082;
+  border-color: #c0b6f5;
+}
+
+.roomCon {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 25px;
+  padding: 40px 60px;
+}
+
+.roomCon > div {
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.roomCon > div:hover {
+  transform: translateY(-5px);
+}
+
+.roomCon h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #4b0082;
+}
+
+.roomCon p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.roomCon button {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background-color: #0741FF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.roomCon button:hover {
+  background-color: #36006e;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+  background-color: #f7f7f7;
+  margin-top: auto;
+}
