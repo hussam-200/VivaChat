@@ -70,7 +70,6 @@ export default function ResearchRoom() {
         <>
             <header className="header">
                 <div>
-                    <img src="/logo.png" alt="VivaChat Logo" />
                     <h1>VivaChat</h1></div>
                 <button onClick={handleHomePage}>Exit Chat</button>
             </header>
