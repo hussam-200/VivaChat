@@ -18,7 +18,9 @@ route.post("/register", async (req, res) => {
         const result = await pool.query("INSERT INTO users (first_name, last_name,email,password) VALUES ($1,$2,$3,$4) RETURNING * ",
             [firstName, lastName, email, hashingpass]
         )
-        
+        if(email === result.email){
+            res.status(405).send("email is used")
+        }
         res.status(201).json(result.rows[0])
     } catch (error) {
         console.log(error);

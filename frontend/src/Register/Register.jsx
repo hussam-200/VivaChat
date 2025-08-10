@@ -2,6 +2,10 @@ import { useEffect, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import axios from "axios"
 import './Register.css'
+import Swal from "sweetalert2";
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+
 
 export default function Register() {
     const navigate = useNavigate();
@@ -29,13 +33,25 @@ export default function Register() {
             axios.post("http://localhost:3333/viva/register", newUser)
                 .then(res => {
                     console.log(res);
-                    navigate("/Home");
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Account is successfully created",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate("/");
                 })
                 .catch(err => {
                     if (err.response) {
                         const status = err.response.status;
                         if (status === 401) {
-                            alert("Email is required");
+                            // alert("Email is Used");
+                             Swal.fire({
+                                        icon: "error",
+                                        title: "Login Failed",
+                                        text: "Email is Used"
+                                      });
                         } else if (status === 403) {
                             alert("Password is required");
                         } else {
@@ -78,13 +94,13 @@ export default function Register() {
                 <input className="inputForm" type="password" value={newUser.password}
                     autoComplete="current-password"
                     onChange={handlePasswordChange} />
-                    {passwordError && <p style={{ color: 'red', fontSize: '14px' }}>{passwordError}</p>}
+                {passwordError && <p style={{ color: 'red', fontSize: '14px' }}>{passwordError}</p>}
                 <p>Do You Have Account ? <NavLink to="/" className="whiteLink">Register</NavLink></p>
 
 
                 <button className="submitButton" type="submit"
-                 disabled={!newUser.email || passwordError || !newUser.password}
-                 >Sign Up</button>
+                    disabled={!newUser.email || passwordError || !newUser.password}
+                >Sign Up</button>
             </form>
             <footer>contact Us</footer>
         </div>

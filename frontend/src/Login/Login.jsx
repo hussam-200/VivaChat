@@ -46,21 +46,21 @@ export default function Login() {
           localStorage.setItem("usersToken", res.data.token);
           navigate("/Home");
         })
-       .catch(err => {
-  let message = "Something went wrong";
-  if (err.response) {
-    const status = err.response.status;
-    if (status === 404) message = "User Not Found";
-    else if (status === 401) message = "Incorrect email or password";
-    else message = "Server error";
-  }
+        .catch(err => {
+          let message = "Something went wrong";
+          if (err.response) {
+            const status = err.response.status;
+            if (status === 404) message = "User Not Found";
+            else if (status === 401) message = "Incorrect email or password";
+            else message = "Server error";
+          }
 
-  Swal.fire({
-    icon: "error",
-    title: "Login Failed",
-    text: message
-  });
-});
+          Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: message
+          });
+        });
 
     } catch (err) {
       console.log(err);
