@@ -51,6 +51,7 @@ export default function Login() {
           if (err.response) {
             const status = err.response.status;
             if (status === 404) message = "User Not Found";
+            // else if (status === 409) message = "Please Enter All Information";
             else if (status === 401) message = "Incorrect email or password";
             else message = "Server error";
           }
@@ -72,17 +73,22 @@ export default function Login() {
 
       <h1 className="mainTitle">VivaChat</h1>
 
-      <form className="LoginForm">
+      <form className="LoginForm" onSubmit={handelLogin}>
         <h3>Login</h3>
+
         <label>Enter Your Email</label>
         <input
           className="inputForm"
           placeholder="hussam@gmail.com"
           type="email"
-          autoComplete="current-password"
+          autoComplete="email"
           value={userData.email}
           onChange={(e) => setUserData(prev => ({ ...prev, email: e.target.value }))}
+          onInvalid={(e) => e.target.setCustomValidity("Please enter your email")}
+          onInput={(e) => e.target.setCustomValidity("")}
+          required
         />
+
         <label>Enter Your Password</label>
         <input
           className="inputForm"
@@ -90,20 +96,22 @@ export default function Login() {
           autoComplete="current-password"
           value={userData.password}
           onChange={handlePasswordChange}
+          required
         />
         {passwordError && <p style={{ color: 'red', fontSize: '14px' }}>{passwordError}</p>}
 
-        <p>Don't have account? <NavLink to="/register" className="whiteLink">Register</NavLink></p>
+        <p>Don't have an account? <NavLink to="/register" className="whiteLink">Register</NavLink></p>
 
         <button
           className="submitButton"
           type="submit"
-          onClick={handelLogin}
-          disabled={!userData.email || !userData.password || passwordError}
+          disabled={passwordError}
         >
           Login
         </button>
       </form>
+
+
 
     </div>
   );

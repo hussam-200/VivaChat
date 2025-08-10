@@ -32,6 +32,9 @@ route.post("/register", async (req, res) => {
 route.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
+        // if(!email || !password){
+        //     res.status(409).send("please enter your info")
+        // }
         const data = await pool.query("SELECT * FROM users WHERE email=$1",
             [email]
         )

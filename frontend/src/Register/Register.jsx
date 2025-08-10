@@ -14,7 +14,13 @@ export default function Register() {
 
     function handlePasswordChange(e) {
         let val = e.target.value;
-
+        if (!newUser.email) {
+            Swal.fire({
+                icon: "error",
+                title: "Missing Email",
+                text: "Please enter your email"
+            });
+        }
         if (val.length > 0) {
             val = val.charAt(0).toUpperCase() + val.slice(1);
         }
@@ -47,11 +53,11 @@ export default function Register() {
                         const status = err.response.status;
                         if (status === 401) {
                             // alert("Email is Used");
-                             Swal.fire({
-                                        icon: "error",
-                                        title: "Login Failed",
-                                        text: "Email is Used"
-                                      });
+                            Swal.fire({
+                                icon: "error",
+                                title: "Login Failed",
+                                text: "Email is Used"
+                            });
                         } else if (status === 403) {
                             alert("Password is required");
                         } else {
@@ -85,10 +91,11 @@ export default function Register() {
 
                 <label>Email:</label>
                 <input className="inputForm" type="email" value={newUser.email}
-                    autoComplete="current-password"
+                    autoComplete="email"
                     onChange={(e) => {
                         setNewUser(prev => ({ ...prev, email: e.target.value }))
-                    }} />
+                    }}
+                />
 
                 <label>Password:</label>
                 <input className="inputForm" type="password" value={newUser.password}
